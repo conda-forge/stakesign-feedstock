@@ -1,5 +1,5 @@
 {% set name = "stakesign" %}
-{% set version = "0.1.4" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 68fac3b8ee4d8d5ea5f0d70e40df8e70e3b8905ea0bb57d4ba9b38961129e38e
+  sha256: 1161f0c9bed845cc0731603ad3d20d3d76193789057033c75b15de9bf03c8b5d
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - stakesign = stakesign:main
   noarch: python
@@ -43,7 +43,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Sign files via blockchain + put your money where your mouth is'
+  summary: Sign files via blockchain + put your money where your mouth is
   description: |
     Command-line tool for preparing & verifying "staked" file signatures (signed by cryptocurrency wallet & tied to its unspent balance)
 
